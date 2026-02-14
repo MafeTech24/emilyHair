@@ -1,15 +1,18 @@
 import { Instagram, Facebook, Music2, Heart } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
     <footer className="py-12 bg-[hsl(var(--champagne))]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="font-display text-2xl font-semibold text-foreground mb-1">
-              Emily <span className="text-primary">Hair Studio</span>
-            </h3>
-            <p className="font-body text-sm text-muted-foreground">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <img 
+              src={logo} 
+              alt="Emily Hair Studio" 
+              className="h-16 md:h-12 w-auto object-contain mb-2 mix-blend-multiply" 
+            />
+            <p className="font-body text-xs text-muted-foreground">
               Peluquería especializada en Córdoba, Argentina
             </p>
           </div>

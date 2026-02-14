@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
@@ -15,9 +16,13 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
-        <a href="#inicio" className="font-display text-2xl md:text-3xl font-semibold text-foreground tracking-wide">
-          Emily <span className="text-primary">Hair Studio</span>
+      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-20 md:h-24">
+        <a href="#inicio" className="flex items-center">
+          <img 
+            src={logo} 
+            alt="Emily Hair Studio" 
+            className="h-14 md:h-20 w-auto object-contain brightness-95" 
+          />
         </a>
 
         {/* Desktop nav */}
