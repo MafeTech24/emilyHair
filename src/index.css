@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,300;1,6..12,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm ivory background */
+    --background: 30 25% 98%;
+    --background-tint: 10 30% 95%;
+    --foreground: 20 25% 12%;
+
+    /* Soft cream cards */
+    --card: 30 30% 93%;
+    --card-foreground: 20 25% 20%;
+
+    --popover: 30 30% 93%;
+    --popover-foreground: 20 25% 20%;
+
+    /* Rose gold primary */
+    --primary: 351 62% 58%;
+    --primary-foreground: 20 25% 15%;
+
+    --accent: 340 45% 62%;
+    --accent-foreground: 20 25% 18%;
+
+    --ring: 351 62% 55%;
+
+
+    /* Warm blush secondary */
+    --secondary: 20 30% 90%;
+    --secondary-foreground: 20 25% 25%;
+
+    /* Soft muted tones */
+    --muted: 25 20% 90%;
+    --muted-foreground: 20 15% 35%;
+
+    /* Dusty rose accent */
+    --accent: 340 30% 75%;
+    --accent-foreground: 20 25% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 25% 84%;
+    --input: 25 25% 84%;
+    --ring: 350 45% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --rose-gold: 350 45% 65%;
+    --rose-gold-light: 350 40% 85%;
+    --champagne: 38 40% 88%;
+    --warm-cream: 30 33% 97%;
+    --warm-brown: 20 25% 20%;
+    --dusty-mauve: 330 20% 60%;
+    --blush: 10 50% 93%;
+    --gold: 38 60% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(350 45% 65% / 0.1), hsl(38 40% 88% / 0.3));
+    --gradient-rose: linear-gradient(135deg, hsl(350, 37%, 41%), hsl(339, 22%, 46%));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--background-tint)), hsl(var(--background-tint)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(350 45% 65% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(20 25% 20% / 0.08);
+    --shadow-elevated: 0 20px 50px -12px hsl(350 45% 65% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-rose {
+    background: var(--gradient-rose);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-gradient-rose {
+    background: var(--gradient-rose);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+  }
+}
