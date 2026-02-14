@@ -49,27 +49,35 @@ const GallerySection = () => {
               key={item.title}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 20px 40px -15px rgba(138, 77, 91, 0.2)"
+              }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="group relative rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500"
+              className="group relative rounded-2xl overflow-hidden shadow-card border border-primary/5 transition-all duration-500 cursor-pointer"
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden bg-muted">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-1000"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                <div>
-                  <h3 className="font-display text-xl font-semibold text-primary-foreground mb-1">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#5a2d39]/90 via-[#5a2d39]/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-8">
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  whileHover={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className="font-display text-2xl font-semibold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     {item.title}
                   </h3>
-                  <p className="font-body text-sm text-primary-foreground/80">
+                  <p className="font-body text-sm text-white/80 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                     {item.description}
                   </p>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           ))}

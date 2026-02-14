@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
@@ -13,16 +12,27 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-20 md:h-24">
-        <a href="#inicio" className="flex items-center">
-          <img 
-            src={logo} 
-            alt="Emily Hair Studio" 
-            className="h-14 md:h-20 w-auto object-contain brightness-95" 
-          />
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled 
+        ? "bg-background/90 backdrop-blur-lg border-b border-border/50 py-1 shadow-sm" 
+        : "bg-background/40 backdrop-blur-md py-4"
+    }`}>
+      <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ${
+        scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
+      }`}>
+        <a href="#inicio" className="font-display text-2xl md:text-3xl font-semibold text-foreground tracking-wide">
+          Emily <span className="text-primary">Hair Studio</span>
         </a>
 
         {/* Desktop nav */}

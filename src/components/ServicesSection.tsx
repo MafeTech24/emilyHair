@@ -62,9 +62,13 @@ const ServicesSection = () => {
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                y: -10,
+                boxShadow: "0 20px 25px -5px rgba(138, 77, 91, 0.1), 0 10px 10px -5px rgba(138, 77, 91, 0.04)"
+              }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-500 border border-border/50"
+              className="group bg-white rounded-2xl p-8 shadow-card border border-border/50 hover:border-primary/20 transition-all duration-500 cursor-default"
             >
               <div className="w-14 h-14 rounded-xl bg-rose-gold-light/40 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-7 h-7 text-primary" />

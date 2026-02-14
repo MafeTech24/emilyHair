@@ -14,26 +14,29 @@ const HeroSection = () => {
           initial={{ scale: 1 }}
           animate={{ scale: 1.1 }}
           transition={{ 
-            duration: 20, 
+            duration: 40, 
             repeat: Infinity, 
             repeatType: "reverse", 
             ease: "linear" 
           }}
         />
-
       </div>
 
-      <div className="container ml-0 px-4 md:px-12 lg:px-24 relative z-10 pt-20">
+      <div className="container mx-auto px-4 md:px-8 relative z-10 pt-20">
         <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl bg-white/20 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white/30 shadow-2xl"
+          initial={{ opacity: 0, x: -100, filter: "blur(10px)" }}
+          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          transition={{ 
+            duration: 1.2, 
+            ease: [0.22, 1, 0.36, 1], // Custom slow-out bezier
+            delay: 0.2 
+          }}
+          className="max-w-2xl bg-white/20 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white/30 shadow-2xl mr-auto"
         >
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
             className="font-body text-sm uppercase tracking-[0.3em] text-[#8a4d5b] font-bold mb-4"
           >
             Peluquería especializada en Córdoba
@@ -42,7 +45,7 @@ const HeroSection = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
             className="font-display text-4xl md:text-5xl lg:text-7xl font-medium text-[#5a2d39] leading-tight mb-8"
             style={{ textShadow: "0px 0px 15px rgba(255,255,255,1), 0px 0px 10px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1)" }}
           >
@@ -52,7 +55,7 @@ const HeroSection = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
             className="font-body text-lg text-[#5a2d39] leading-relaxed mb-8"
           >
             Coloración personalizada, alisados profesionales y tratamientos capilares
@@ -62,7 +65,7 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
@@ -83,8 +86,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-
-
     </section>
   );
 };
