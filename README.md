@@ -43,4 +43,4 @@ El pie de página integra accesos directos a las comunidades del estudio en:
 
 ---
 
-*Diseñado con pasión para elevar la presencia digital de Emily Hair Studio.*
+*Diseñado para elevar la presencia digital de Emily Hair Studio.*
